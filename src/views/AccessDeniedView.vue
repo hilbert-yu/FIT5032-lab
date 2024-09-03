@@ -1,20 +1,20 @@
 <template>
-    <div class="access-denied">
-      <h1>Access Denied</h1>
-      <p>You do not have permission to view this page. Please <router-link to="/login">login</router-link>.</p>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'AccessDeniedView',
-  };
-  </script>
-  
-  <style>
-  .access-denied {
-    text-align: center;
-    margin-top: 50px;
-  }
-  </style>
-  
+  <div class="container">
+    <h1>Access Denied</h1>
+    <p>You do not have permission to view this page.</p>
+    <router-link to="/">Return to Home</router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "AccessDeniedView",
+};
+</script>
+
+<style scoped>
+.container {
+  margin-top: 50px;
+  text-align: center;
+}
+</style>

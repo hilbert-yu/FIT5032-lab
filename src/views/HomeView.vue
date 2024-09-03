@@ -2,9 +2,11 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <h1 class="text-center">🗄️ W5. Library Registration Form</h1>
-          <p class="text-center">Add more advanced features</p>
-          <form @submit.prevent="submitForm">
+          <div>
+            <h1>Welcome to the Week7 Home Page</h1>
+          </div>
+
+          <!-- <form @submit.prevent="submitForm">
             <div class="row mb-3">
   
               <div class="row mb-4 align-items-start">
@@ -100,7 +102,7 @@
               <Column field="gender" header="Gender"></Column>
               <Column field="reason" header="Reason"></Column>
             </DataTable>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -124,11 +126,10 @@
   
   </template>
   
-  <script setup>
+  <!-- <script setup>
     import { ref } from 'vue';
     import DataTable from 'primevue/datatable'; 
     import Column from 'primevue/column';
-  
       
     const formData = ref({
       username: '',
@@ -245,9 +246,18 @@
           friendMessage.value = null;
         }
       }
-    };
+    }; 
   
-  </script>
+  </script> -->
+<script>
+export default {
+  computed: {
+    userRole() {
+      return this.$store.state.userRole;
+    }
+  }
+};
+</script>
   
   <!-- <style scoped>
     .card {
