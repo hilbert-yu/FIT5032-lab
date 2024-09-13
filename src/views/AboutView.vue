@@ -5,9 +5,9 @@
     </div>
   </template>
   
-  <script setup>
-  // No script needed for now
-  </script>
+<script setup>
+// No script needed for now
+</script>
   
 <style>
     h1, p {

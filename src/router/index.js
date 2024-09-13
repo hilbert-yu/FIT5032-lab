@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import FirebaseSignin from '../views/FirebaseSigninView.vue'
 import FirebaseRegiter from '../views/FirebaseRegisterView.vue'
 import Admin from '../views/AdminView.vue'
+import AddBookView from '../views/AddBookView.vue';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
@@ -34,6 +35,11 @@ const routes = [
     name: 'Admin',
     component: Admin,
     meta: { requiresAuth: true, requiresAdmin: true } 
+  },
+  {
+    path: '/addbook',
+    name: 'AddBook',
+    component: AddBookView
   }
 ]
 

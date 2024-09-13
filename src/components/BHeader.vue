@@ -27,6 +27,12 @@
             Admin
           </router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/addbook" class="nav-link" active-class="active">
+            Add Book
+          </router-link>
+        </li>
+
         <li class="nav-item" v-if="loggedIn">
           <button @click="logout" class="nav-link btn btn-link">Logout</button>
         </li>
@@ -36,7 +42,7 @@
 </template>
 
 <script>
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 export default {
@@ -70,7 +76,9 @@ export default {
   methods: {
     logout() {
       const auth = getAuth();
-      auth.signOut().then(() => {
+      signOut(auth).then(() => {
+        console.log("current user: ", auth.currentUser);
+        alert("Log out successfully.")
         this.$router.push('/');
       });
     }

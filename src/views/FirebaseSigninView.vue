@@ -33,15 +33,11 @@ const signin = async () => {
       const userData = docSnap.data();
       const userRole = userData.role;
 
-      console.log("User Role:", userRole);
+      console.log("User Role: ", userRole);
 
-      if (userRole === "admin") {
-        alert('Login Successful!');
-        router.push("/about");
-      } else {
-        alert('Login Successful!');
-        router.push("/about");
-      }
+      alert('Login Successful!');
+      router.push("/about");
+
     } else {
       console.log("No such document!");
     }

@@ -249,15 +249,21 @@
     }; 
   
   </script> -->
-<script>
-export default {
-  computed: {
-    userRole() {
-      return this.$store.state.userRole;
+  <script>
+  import { getAuth } from 'firebase/auth';
+  
+  export default {
+    // mounted() {
+    //   const auth = getAuth();
+    //   console.log("current user: ", auth.currentUser);
+    // },
+    computed: {
+      userRole() {
+        return this.$store.state.userRole;
+      }
     }
-  }
-};
-</script>
+  };
+  </script>  
   
   <!-- <style scoped>
     .card {
