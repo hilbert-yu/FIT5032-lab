@@ -47,6 +47,11 @@
             Get Book API
           </router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/get-all-books" class="nav-link" active-class="active">
+            Get All BooKs API
+          </router-link>
+        </li>
 
         <li class="nav-item" v-if="loggedIn">
           <button @click="logout" class="nav-link btn btn-link">Logout</button>

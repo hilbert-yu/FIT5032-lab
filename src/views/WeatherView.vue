@@ -13,11 +13,9 @@
             </div>
         </div>
     </div>
-    <main>  
+    <main>
         <div v-if="weatherData" class="weather-info">
-            <h2>
-                {{ weatherData.name }}, {{ weatherData.sys.country }}
-            </h2>
+            <h2>{{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
             <div>
                 <img :src="iconUrl" alt="Weather Icon" />
                 <p>{{ temperature }} °C</p>
@@ -36,45 +34,41 @@ export default {
   name: "App",
   data() {
     return {
-      city: "",
+      city: "", // City input from user
       weatherData: null,
     };
   },
   computed: {
     temperature() {
       return this.weatherData
-        ? Math.floor(this.weatherData.main.temp - 273)
+        ? Math.floor(this.weatherData.main.temp)
         : null;
     },
     iconUrl() {
       return this.weatherData
-        ? `http://api.openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
+        ? `http://openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
         : null;
     },
   },
-  mounted() {
-    this.fetchCurrentLocationWeather();
-  },
   methods: {
-    async fetchCurrentLocationWeather() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(async (position) => {
-          const { latitude, longitude } = position.coords;
-          const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`;
-          await this.fetchWeatherData(url);
-        });
+    async searchByCity() {
+      if (this.city.trim() === "") {
+        alert("Please enter a city name");
+        return;
       }
-    },
-    async fetchWeatherData(url) {
+      
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${apikey}&units=metric`;
+
       try {
         const response = await axios.get(url);
         this.weatherData = response.data;
       } catch (error) {
         console.error("Error fetching weather data:", error);
+        alert("Could not fetch weather data. Please try again.");
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

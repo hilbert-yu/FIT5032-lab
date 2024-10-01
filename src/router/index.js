@@ -8,6 +8,7 @@ import AddBookView from '../views/AddBookView.vue';
 import GetBookCountView from '@/views/GetBookCountView.vue'
 import WeatherView from '@/views/WeatherView.vue'
 import CountBookAPI from '@/views/CountBookAPI.vue'
+import GetAllBookAPI from '@/views/GetAllBookAPI.vue';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
@@ -58,6 +59,11 @@ const routes = [
     path: '/CountBookAPI',
     name: 'CountBookAPI',
     component: CountBookAPI
+  },
+  {
+    path: '/get-all-books',
+    name: 'GetAllBooks',
+    component: GetAllBookAPI
   }
 ]
 
