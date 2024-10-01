@@ -1,12 +1,12 @@
 <script setup>
-import BHeader from './components/BHeader.vue'
+// import BHeader from './components/BHeader.vue'
 </script>
 
 <template>
   <!-- <JSON /> -->
   <!-- <Form /> -->
   <div class="main-container">
-    <header>
+    <header v-if="showHeader">
       <BHeader />
     </header>
 
@@ -17,7 +17,25 @@ import BHeader from './components/BHeader.vue'
 
 </template>
 
-<style scoped>
+<script>
+import BHeader from './components/BHeader.vue';
+import CountBookAPI from './views/CountBookAPI.vue';
+
+export default {
+  name: 'App',
+  components: {
+    BHeader,
+    CountBookAPI
+  },
+  computed: {
+    showHeader() {
+      return this.$route.name !== 'CountBookAPI';
+    }
+  }
+};
+</script>
+
+<!-- <style scoped>
   .section-title {
     text-align: center;
   }
@@ -44,6 +62,6 @@ import BHeader from './components/BHeader.vue'
   .list-group-item {
     padding: 10px;
   }
-</style>
+</style> -->
 
 

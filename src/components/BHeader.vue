@@ -37,6 +37,16 @@
             Get Book Count
           </router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/WeatherCheck" class="nav-link" active-class="active">
+            Get Weather
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/CountBookAPI" class="nav-link" active-class="active">
+            Get Book API
+          </router-link>
+        </li>
 
         <li class="nav-item" v-if="loggedIn">
           <button @click="logout" class="nav-link btn btn-link">Logout</button>
