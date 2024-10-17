@@ -256,7 +256,7 @@
     // mounted() {
     //   const auth = getAuth();
     //   console.log("current user: ", auth.currentUser);
-    // },
+    // }, 
     computed: {
       userRole() {
         return this.$store.state.userRole;
