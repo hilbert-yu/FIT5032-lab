@@ -46,7 +46,7 @@ export default {
     },
     iconUrl() {
       return this.weatherData
-        ? `http://openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
+        ? `https://openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
         : null;
     },
   },

@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<!-- <style>
 .center {
   text-align: center;
 }
@@ -42,4 +42,4 @@ button {
   margin: 20px auto; 
   display: block;
 }
-</style>
+</style> -->
